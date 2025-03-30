@@ -1,4 +1,4 @@
-AC_INIT([myman], [1.0], [kragen@pobox.com])
+AC_INIT([myman], [0.1], [michael.opdenacker@rootcommit.com])
 AM_INIT_AUTOMAKE([foreign subdir-objects])
 AC_CONFIG_SRCDIR([src/myman.c])
 AC_CONFIG_HEADERS([config.h])
