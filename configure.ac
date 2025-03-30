@@ -12,6 +12,9 @@ AC_CHECK_HEADERS([stdio.h stdlib.h string.h unistd.h])
 # Checks for libraries
 AC_CHECK_LIB([ncurses], [initscr], [], [AC_MSG_ERROR([ncurses not found])])
 
+# Store prefix option in config.h
+AC_DEFINE_UNQUOTED([PREFIX], ["$prefix"], [Installation prefix])
+
 # Output
 AC_CONFIG_FILES([Makefile src/Makefile])
 AC_OUTPUT

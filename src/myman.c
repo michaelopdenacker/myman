@@ -26,6 +26,7 @@
 /* configuration information */
 #ifdef HAVE_CONFIG_H
 #ifndef MYMAN_CONFIG_H_INCLUDED
+#define MYMAN_DATA PREFIX "/share/myman/"
 #include "config.h"
 #endif
 #endif
@@ -7863,6 +7864,14 @@ main(int argc, char *argv[]
         /* we should care */
     }
 #endif
+
+    /* Go to MYMAN_DATA to get access to the data files */
+    if (chdir(MYMAN_DATA))
+    {
+	fprintf(stderr, "Unable to access data directory: %s\n", MYMAN_DATA);
+        exit(2);
+    }
+
     progname = (argc > 0) ? argv[0] : "";
     pager_notice = MYMANLEGALNOTICE;
 #ifdef MACCURSES
